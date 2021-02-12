@@ -7,9 +7,9 @@ function App() {
 
   const [courses, setCourses] = useState([]);
 
-  // const course = courses.map((element) =>{
-  //   return <p>{element.name}</p>
-  // });
+  const course = courses.map((element) =>{
+    return <p>{element.name}</p>
+  });
 
   useEffect(()=>{
     getCourses().then((courses) => {
@@ -22,7 +22,7 @@ function App() {
 
     <>
       <h1>Now I need to re-learn React!</h1>
-      {/* {course} */}
+      {course}
       
     </>
     
