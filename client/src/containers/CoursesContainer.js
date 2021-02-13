@@ -12,6 +12,7 @@ const CourseContainer = ({courses}) => {
             {course}
         </>
     );
+    
 };
 
 export default CourseContainer;

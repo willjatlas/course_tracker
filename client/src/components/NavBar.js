@@ -15,8 +15,8 @@ const NavBar = () => {
                 </li>
             </nav>
         </>
-    )
+    );
 
-}
+};
 
 export default NavBar;
