@@ -28,8 +28,8 @@ function App() {
       <Router>
         <NavBar/>
         <Switch>
-          <Route path="/" component={HomeContainer} />
           <Route path="/courses" exact render={()=> <CourseContainer courses={courses} /> } />
+          <Route path="/" component={HomeContainer} />
         </Switch>
       </Router>
       
