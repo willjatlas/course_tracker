@@ -1,25 +1,37 @@
-import userEvent from '@testing-library/user-event';
 import { useEffect , useState} from 'react';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import './App.css';
+import HomeContainer from "./containers/HomeContainer";
 import CourseContainer from './containers/CoursesContainer';
-import { getCourses } from './services/CTAppServices';
+import NavBar from "./components/NavBar";
+import { getCourses, getCutomers } from './services/CTAppServices';
 
 function App() {
 
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses]      = useState([]);
+  const [customers , setCustomers] = useState([]);
 
   useEffect(()=>{
+
     getCourses().then((courses) => {
-      console.log(courses);
       setCourses(courses);
     })
+    getCutomers().then((customers) => {
+      setCustomers(customers);
+    })
+
   }, []);
 
   return (
 
     <>
-      <h1>Welcome to the home page!</h1>
-      <CourseContainer courses = {courses}/>
+      <Router>
+        <NavBar/>
+        <Switch>
+          <Route path="/" component={HomeContainer} />
+          <Route path="/courses" exact render={()=> <CourseContainer courses={courses} /> } />
+        </Switch>
+      </Router>
       
     </>
     
