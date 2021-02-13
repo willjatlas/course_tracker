@@ -1,15 +1,12 @@
 import userEvent from '@testing-library/user-event';
 import { useEffect , useState} from 'react';
 import './App.css';
+import CourseContainer from './containers/CoursesContainer';
 import { getCourses } from './services/CTAppServices';
 
 function App() {
 
   const [courses, setCourses] = useState([]);
-
-  const course = courses.map((element) =>{
-    return <p>{element.name}</p>
-  });
 
   useEffect(()=>{
     getCourses().then((courses) => {
@@ -21,8 +18,8 @@ function App() {
   return (
 
     <>
-      <h1>Now I need to re-learn React!</h1>
-      {course}
+      <h1>Welcome to the home page!</h1>
+      <CourseContainer courses = {courses}/>
       
     </>
     

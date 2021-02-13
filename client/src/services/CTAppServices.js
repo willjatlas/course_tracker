@@ -5,3 +5,10 @@ export const getCourses = () => {
     return fetch(baseURL + "courses")
         .then(res => res.json())
 };
+
+// Get - get all customers 
+export const getCutomers  = () => {
+    return fetch(baseURL + "customers")
+        .then(res => res.json())
+};
+
