@@ -10,8 +10,9 @@ const NavBar = () => {
                 <li>
                     <Link className="nav-bar-link" to="/courses"> Courses </Link>
                 </li>
-
-
+                <li>
+                    <Link className="nav-bar-link" to="/add-course"> Add Course </Link>
+                </li>
             </nav>
         </>
     )
