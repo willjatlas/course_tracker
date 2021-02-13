@@ -8,7 +8,7 @@ const CourseContainer = ({courses}) => {
 
     return (
         <>
-            <h1> this is the course container </h1>
+            <h1> Available Courses </h1>
             {course}
         </>
     );

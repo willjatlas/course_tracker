@@ -6,9 +6,18 @@ export const getCourses = () => {
         .then(res => res.json())
 };
 
-// Get - get all customers 
+// GET - get all customers 
 export const getCutomers  = () => {
     return fetch(baseURL + "customers")
         .then(res => res.json())
 };
 
+// POST - add a course to the db.
+export const postCourse = (payload) => {
+    return fetch(baseURL + "courses", {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {"content-Type" : "application/json"}
+    })
+    .then(res => res.json())
+} 
