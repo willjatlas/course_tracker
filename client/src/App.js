@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import './App.css';
 import HomeContainer from "./containers/HomeContainer";
 import CourseContainer from './containers/CoursesContainer';
+import BookingContainer from "./containers/BookingContainer";
 import NavBar from "./components/NavBar";
 import { getCourses, getCutomers } from './services/CTAppServices';
 
@@ -28,8 +29,9 @@ function App() {
       <Router>
         <NavBar/>
         <Switch>
+          <Route exact path="/" component={HomeContainer} />
           <Route path="/courses" exact render={()=> <CourseContainer courses={courses} /> } />
-          <Route path="/" component={HomeContainer} />
+          <Route path="/booking" exact render={()=> <BookingContainer /> } />
         </Switch>
       </Router>
       
